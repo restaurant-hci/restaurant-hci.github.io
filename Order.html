@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Angla Burger Website</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link id="changeable-colors" rel="stylesheet" href="css/strong-blue.css" />
+    <script src="js/modernizer.js"></script>
+    <script type="text/javascript">
+        function popup(){
+            var emp8 = document.forms["form1"]["preferred_food"].value;
+            document.getElementById("heh").innerHTML = emp8;
+        }
+        function required(){
+            var emp1 = document.forms["form1"]["form_name"].value;
+            var emp2 = document.forms["form1"]["email"].value;
+            var emp3 = document.forms["form1"]["date-picker"].value;
+            var emp4 = document.forms["form1"]["time-picker"].value;
+            var emp5 = document.forms["form1"]["paying_with"].value;
+            var emp6 = document.forms["form1"]["phone"].value;
+            var emp7 = document.forms["form1"]["no_of_persons"].value;
+            var emp8 = document.forms["form1"]["preferred_food"].value;
+            if (emp1==""||emp2==""||emp3==""||emp4==""||emp5=="Paying With"||emp6==""||emp7=="No. Of Orders"||emp8=="Food Order"){
+                alert("Please Fill All Fields.");
+                return false;
+            } else{
+                 alert('Order Submitted');
+                 return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    
+    <div id="site-header">
+        <header id="header" class="header-block-top">
+            <div class="container">
+                <div class="row">
+                    <div class="main-menu">
+                        <!-- navbar -->
+                        <nav class="navbar navbar-default" id="mainNav">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <div class="logo">
+                                    <a class="navbar-brand js-scroll-trigger logo-header" href="#">
+                                        <img src="images/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="navbar" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="Menu.html">Menu</a></li>
+                                    
+                                    <li><a href="Blog.html">Blog</a></li>
+                                    <li  class="active"><a href="Order.html">Order</a></li>
+                                    <li><a href="AboutUs.html">Contact us</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+
+
+    <div id="reservation" class="reservations-main pad-top-100 pad-bottom-100">
+        <div class="container">
+            <div class="row">
+                <div class="form-reservations-box">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                            <h2 class="block-title text-center">
+                        Order          
+                    </h2>
+                        </div>
+                        <h4 class="form-title">ORDER FORM</h4>
+
+                        <form  method="get"  name="form1" action="mail.php">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="text" name="form_name" id="form_name" placeholder="Name" required="required" data-error="Firstname is required.">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="email" name="email" id="email" placeholder="EMail" required="required" data-error="E-mail id is required.">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="text" name="phone" id="phone" placeholder="contact no.">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <select name="no_of_persons" id="no_of_persons" class="selectpicker">
+                                        <option selected disabled>No. Of Orders</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="text" name="date-picker" id="date-picker" placeholder="Date" required="required" data-error="Date is required." />
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="text" name="time-picker" id="time-picker" placeholder="Time" required="required" data-error="Time is required." />
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <select name="preferred_food" id="preferred_food" class="selectpicker" >
+                                        <option selected disabled hidden>Food Order</option>
+                                        <option>Cheese Burger</option>
+                                        <option>Beef Burgur</option>
+                                        <option>Chicken Burger</option>
+                                        <option>Tuna Sandwich</option>
+                                        <option>Double Beef Burger</option>
+                                        <option>Double Cheese Burgur</option>
+                                        <option>Special I</option>
+                                        <option>Special II</option>
+                                        <option>Deluxue</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <select name="paying_with" id="occasion" class="selectpicker">
+                                        <option selected disabled hidden>Paying With</option>
+                                        <option>Credit Card</option>
+                                        <option>In Cash</option>
+                                        <option>Mobile Banking</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="reserve-book-btn text-center">
+                                    <button onclick="required()" class="hvr-underline-from-center" type="submit" value="SEND" id="submit">ORDER</button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="heh"></div>
+
+
+
+    <div id="footer" class="footer-main">
+        <div class="footer-box pad-top-70">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-in-main">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="footer-box-a">
+                                <h3>About Us</h3>
+                                <p>Angla Burger is a food enterprise established in Addis Ababa, Ethiopia. A Proud and Established Burger Chain.</p>
+                                <ul class="socials-box footer-socials pull-left">
+                                    <li>
+                                        <a href="#">
+                                            <div class="social-circle-border"><i class="fa  fa-facebook"></i></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="social-circle-border"><i class="fa fa-twitter"></i></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="social-circle-border"><i class="fa fa-google-plus"></i></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="social-circle-border"><i class="fa fa-pinterest"></i></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="social-circle-border"><i class="fa fa-linkedin"></i></div>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="footer-box-b">
+                                <h3>Branches</h3>
+                                <ul>
+                                    <li><a href="#">Bole, Medhanialem Mall</a></li>
+                                    <li><a href="#">Bole, Morning Star Mall</a></li>
+                                    <li><a href="#">5 Kilo, AAiT</a></li>
+                                    <li><a href="#">Piassa, Coming Soon....</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="footer-box-c">
+                                <h3>Contact Us</h3>
+                                <p>
+                                    <i class="fa fa-map-signs" aria-hidden="true"></i>
+                                    <span>1241, Yeka Kifleketema, Addis Ababa</span>
+                                </p>
+                                <p>
+                                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                                    <span>
+                                    +251 985688536
+                                </span>
+                                </p>
+                                <p>
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <span><a href="#">anglaburger@gmail.com</a></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="footer-box-d">
+                                <h3>Opening Hours</h3>
+
+                                <ul>
+                                    <li>
+                                        <p>Monday - Friday </p>
+                                        <span> 3:00 AM - 9:00 PM</span>
+                                    </li>
+                                    <li>
+                                        <p>Saturday - Saturday </p>
+                                        <span> 3:00 AM - 5:00 PM</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="copyright" class="copyright-main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h6 class="copy-title"> Copyright &copy; 2019 Angla Burgers </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/all.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
