@@ -9,9 +9,41 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link id="changeable-colors" rel="stylesheet" href="css/strong-blue.css" />
-    <link rel="shortcut icon" " href="https://restaurant-hci.github.io/burgerfavicon.ico"/>
     <script src="js/modernizer.js"></script>
+    <script type="text/javascript">
+
+        function filterText(sText) {
+            var reBadWords = /fuck|shit/gi;
+            return sText.replace(reBadWords, function (sMatch) {
+                return sMatch.replace(/./g, "*");
+            });
+        }
+
+        function alertMake() {
+
+            
+
+            window.alert(matches);
+        }
+
+
+        function showText() {
+            
+            var oInput1 = document.getElementById("txt1");
+            var oInput2 = document.getElementById("txt2");
+            oInput1.value = filterText(oInput1.value);
+
+            if (matches===null){
+                window.alert("Message Sent.");
+            } else {
+                window.alert("Profanity Found. You message has been censored");
+            }
+
+        }
+    </script>
+
 </head>
+
 
 <body>
     
@@ -162,6 +194,49 @@
 
                     </div>
 
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    <div id="reservation" class="reservations-main pad-top-100 pad-bottom-100">
+        <div class="container">
+            <div class="row">
+                <div class="form-reservations-box">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="form-title">CONTACT FORM</h4>
+
+                        <form id="contact-form" method="post" class="reservations-box" name="contactform" action="mail.php">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="text" name="form_name" id="form_name" placeholder="Name" required="required" data-error="Firstname is required.">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="email" name="email" id="email" placeholder="E-Mail" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" data-error="E-mail id is required.">
+                                </div>
+                            </div>
+                            <div class="form-box">
+                            
+                                    <textarea class="form-control" id="txt1" type="textarea" id="message" placeholder="Message" maxlength="6000" rows="7"></textarea>
+                            
+
+                            
+                            </div>    
+                            </div>
+
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="reserve-book-btn text-center">
+                                    <button class="hvr-underline-from-center" type="submit" value="SEND" id="submit" onclick="showText()">SEND</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
